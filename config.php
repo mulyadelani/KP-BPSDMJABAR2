@@ -4,15 +4,14 @@
 session_start();
 
 // Pengaturan Database
-define('DB_HOST', '172.21.0.2');
-define('DB_USER', 'aplikasipelaithan');
-define('DB_PASS', 'wadawaplikasipelaithan123');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 define('DB_NAME', 'aplikasipelatihannative');
 
-define('BASE_URL', 'https://integral-bpsdm.jabarprov.go.id/presensi-digital/');
+define('BASE_URL', 'http://localhost/presensi/');
 
 // Pengaturan BASE URL STATIS
-define('BASE_URL', 'https://integral-bpsdm.jabarprov.go.id/presensi-digital/');
 define('BASE_PATH', dirname(__FILE__) . '/');
 
 // Koneksi ke Database
