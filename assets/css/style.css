@@ -1,0 +1,355 @@
+/* /assets/css/style.css */
+
+/* General Body Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    margin: 0;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #e9ecef;
+}
+
+/* Main Content Area */
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Forms and Inputs */
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for padding */
+}
+
+button, input[type="submit"] {
+    background-color: #87CEFA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #87CEFA;
+}
+
+button[type="button"] {
+    background-color: #5a6268 ;
+}
+
+button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Specific Element Styling */
+h1, h2, h3 {
+    color: #343a40;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 2rem 0;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
+
+#signature-pad {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tambahkan di akhir file */
+body {
+    background-color: #f8f9fa;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+main.container-fluid {
+    max-width: 1200px;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.form-control, .form-select {
+    border-radius: 0.5rem;
+}
+
+.btn {
+    border-radius: 0.5rem;
+}
+
+.table-responsive {
+    border-radius: 0.75rem;
+}
+
+/* Custom Navbar Active & Hover States */
+
+.navbar-nav .nav-link {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    margin: 0 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem; /* Terapkan border-radius ke semua link */
+}
+
+/* Style untuk menu yang sedang AKTIF (tetap biru) */
+.navbar-nav .nav-link.active {
+    background-color: #e7f1ff; /* Latar biru muda */
+    color: #0d6efd !important; /* Teks & Ikon biru tua */
+    font-weight: 500;
+}
+
+/* Style saat mouse HOVER di atas SEMUA menu (aktif maupun tidak aktif) */
+.navbar-nav .nav-link:hover {
+    background-color: rgba(25, 135, 84, 0.1); /* Latar hijau dengan opacity 10% */
+    color: #198754 !important; /* Teks & Ikon hijau tua */
+}
+
+/* Styling Kustom untuk Tombol Salin Link */
+.input-group .btn-copy-link {
+    background-color: #6c757d; /* Warna abu-abu gelap (Bootstrap Secondary) */
+    border-color: #6c757d;
+    color: white; /* Membuat ikon clipboard menjadi putih */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none; /* Menghilangkan shadow saat focus */
+}
+
+.input-group .btn-copy-link:hover {
+    background-color: #5a6268; /* Warna sedikit lebih gelap saat hover */
+    border-color: #5a6268;
+    color: white;
+}
+
+
+/* Styling untuk Halaman Form Publik (lihat.php) */
+.public-header {
+    background-color: #f0fdf4; /* Warna hijau sangat muda */
+    border-bottom: 2px solid #22c55e; /* Garis hijau di bawah */
+    padding: 1rem 0;
+}
+
+.public-header .navbar-brand {
+    font-size: 1.5rem;
+}
+
+.form-container .card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.question-block {
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.question-block label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.question-block .form-text {
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+#signature-pad-canvas {
+    width: 50%; /* BARU: Pastikan canvas mengisi lebar kontainer */
+    height: 200px; /* BARU & PENTING: Beri tinggi awal untuk area gambar */
+    border: 1px solid #0066ff;
+    border-radius: 0.375rem;
+    cursor: crosshair;
+}
+.print-only {
+    display: none;
+}
+
+/* Styling Kustom untuk Card Kategori dengan Outline & Hover */
+.category-card {
+    /* Menambahkan border/outline yang jelas */
+    border: 1px solid #dee2e6; /* Warna border default Bootstrap */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Memberi sedikit shadow awal yang soft */
+    
+    /* Transisi agar efek hover menjadi halus */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Efek Hover untuk Card Kategori */
+.category-card:hover {
+    transform: translateY(-5px); /* Angkat kartu sedikit ke atas */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12); /* Beri bayangan yang lebih kuat */
+    border-color: #0d6efd; /* Ubah warna border menjadi biru (primary) saat hover */
+}
+
+.category-card .card-title {
+    font-weight: 600; /* Membuat judul lebih tebal */
+}
+
+/* ======================================================= */
+/* PERBAIKAN: Membuat Baris Tabel Lebih Rapat */
+/* ======================================================= */
+.table-rapat td, .table-rapat th {
+    padding-top: 0.5rem;      /* Mengurangi padding atas */
+    padding-bottom: 0.2rem;   /* Mengurangi padding bawah */
+}
+
+
+/* ======================================================= */
+/* STYLING BARU UNTUK HALAMAN BUAT FORM (GOOGLE FORM STYLE) */
+/* ======================================================= */
+
+/* Latar belakang halaman menjadi lebih soft */
+body {
+    background-color: #f0f2f5;
+}
+
+/* Header utama form */
+.form-builder-header {
+    border-top: 10px solid #0059c3; /* Warna ungu khas Google Forms */
+    background-color: #fff;
+    padding: 1.5rem;
+}
+.form-builder-header .form-control {
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    padding-left: 0;
+}
+.form-builder-header .form-control:focus {
+    box-shadow: none;
+    border-color: #0059c3;
+}
+
+/* Setiap blok pertanyaan */
+.question-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    position: relative;
+    border-left: 5px solid transparent; /* Garis indikator saat aktif */
+    transition: border-color 0.2s ease-in-out;
+}
+.question-card:focus-within {
+    border-left-color: #0059c3; /* Warna ungu saat aktif */
+}
+
+/* Tombol aksi yang melayang */
+.action-panel {
+    position: sticky;
+    top: 80px; /* Jarak dari atas navbar */
+    align-self: flex-start; /* Agar tetap di atas */
+}
+.action-panel .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+/* Styling untuk Handle Drag and Drop */
+.drag-handle {
+    cursor: grab; /* Ubah kursor menjadi tangan saat hover */
+}
+.drag-handle:active {
+    cursor: grabbing; /* Ubah kursor saat sedang menarik */
+}

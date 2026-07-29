@@ -1,0 +1,121 @@
+/* ======================================================= */
+/* FILE CSS INI HANYA AKAN AKTIF SAAT MENCETAK */
+/* ======================================================= */
+@media print {
+
+    /* Aturan Halaman Cetak */
+    @page {
+        size: 210mm 330mm portrait;
+        margin: 15mm;
+    }
+    @page landscape {
+        size: 330mm 210mm landscape;
+        margin: 15mm;
+    }
+    body.print-landscape {
+        page: landscape;
+    }
+
+    /* Aturan Umum */
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10pt;
+        color: #000;
+        background-color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* ------------------------------------------------------- */
+    /* 3. STYLE UNTUK KOP SURAT & JUDUL */
+    /* ------------------------------------------------------- */
+    
+    .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 15px;
+        border-bottom: 4px double #000;
+        padding-bottom: 10px;
+    }
+    .print-header .logo { 
+        float: left; 
+        width: 90px; 
+        height: auto; 
+        margin-right: 20px; 
+    }
+    .print-header .kop-text { 
+        text-align: center; 
+        line-height: 1.4; 
+    }
+    .print-header h1, .print-header h2, .print-header p { 
+        margin: 0; 
+        padding: 0; 
+    }
+    .print-header h1 { font-size: 14pt; }
+    .print-header h2 { font-size: 18pt; font-weight: bold; }
+    .print-header p { font-size: 10pt; }
+
+    .print-title-container {
+        display: block !important;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    .print-title-container h3 { 
+        text-decoration: underline; 
+        font-size: 14pt; 
+        font-weight: bold; 
+        margin: 0; 
+    }
+    .print-title-container h4 { 
+        font-size: 12pt; 
+        font-weight: normal; 
+        margin: 0; 
+    }
+
+    /* ------------------------------------------------------- */
+    /* 4. ATURAN AGAR TABEL TIDAK TERPOTONG */
+    /* ------------------------------------------------------- */
+    
+    /* 1. Atur ulang semua elemen agar tidak memiliki lebar tetap */
+     .card, .card-body, .table-responsive {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: auto;
+        /* KUNCI PERBAIKAN: Paksa tabel untuk membagi lebar secara merata */
+        table-layout: fixed;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    th, td {
+        border: 1px solid #888;
+        padding: 5px;
+        vertical-align: middle;
+        /* Paksa teks panjang untuk pindah baris */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    th {
+        background-color: #e9ecef !important;
+        font-weight: bold;
+    }
+    
+    td img {
+        display: block !important;
+        max-height: 35px;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+    }
+}

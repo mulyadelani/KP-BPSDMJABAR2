@@ -1,0 +1,19 @@
+--- LOG BARU PADA 2026-05-04 03:07:50 ---
+Skrip update_urutan.php dimulai.
+Metode POST dan session user ditemukan.
+Data raw diterima: {"urutan":["982","985","983","984"]}
+Data JSON berhasil di-decode. Urutan ID: 982, 985, 983, 984
+Transaksi dimulai.
+Mulai loop UPDATE...
+Menjalankan: UPDATE pertanyaan SET urutan = 0 WHERE id = 982
+  -> PERINGATAN: 0 baris terpengaruh untuk ID 982. Mungkin ID tidak ada atau urutan sudah sama.
+Menjalankan: UPDATE pertanyaan SET urutan = 1 WHERE id = 985
+  -> SUKSES: 1 baris terpengaruh.
+Menjalankan: UPDATE pertanyaan SET urutan = 2 WHERE id = 983
+  -> SUKSES: 1 baris terpengaruh.
+Menjalankan: UPDATE pertanyaan SET urutan = 3 WHERE id = 984
+  -> SUKSES: 1 baris terpengaruh.
+Loop UPDATE selesai.
+Transaksi di-commit.
+Autocommit diaktifkan kembali.
+Respons akhir yang dikirim: {"status":"success","message":"Urutan berhasil diperbarui."}
