@@ -66,7 +66,7 @@ include 'header.php';
         <p class="text-muted">Tambah, edit, atau hapus semua kategori presensi.</p>
     </div>
     <div>
-        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#kategoriModal">
+        <button type="button" class="btn btn-add-kategori float-end" data-bs-toggle="modal" data-bs-target="#kategoriModal">
             <i class="bi bi-plus-circle"></i> Tambah Kategori Baru
         </button>
     </div>

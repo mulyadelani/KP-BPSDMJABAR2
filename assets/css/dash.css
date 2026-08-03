@@ -395,7 +395,28 @@ body {
 .offcanvas-body {
     padding: 0 20px 20px;
 }
+.btn-add-kategori {
+  background-color: var(--teal-dark);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
 
+.btn-add-kategori:hover {
+  background-color: #2563eb;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+.btn-add-kategori:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
 @media (max-width: 575.98px) {
   .app-topbar {
     flex-direction: column;
