@@ -194,6 +194,7 @@ include 'header.php';
                     if ($result->num_rows > 0):
                         while ($row = $result->fetch_assoc()):
                             $link = BASE_URL . "formulir/lihat.php?id=" . $row['id'];
+                            $safe_title = preg_replace('/[^a-zA-Z0-9_-]/', '_', $row['judul_pelatihan']);
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
@@ -409,6 +410,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const qrContainer = document.getElementById('qrcode-container');
         const btnDownloadQr = document.getElementById('btn-download-qr');
         const qrCodeLinkP = document.getElementById('qr-code-link');
+        let currentQrImageSrc = '';
+let currentQrFilename = 'qrcode.png';
 
         qrCodeModal.addEventListener('show.bs.modal', function(event) {
             const button = event.relatedTarget;
@@ -429,12 +432,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Perbarui link download setelah QR Code dibuat
             // Butuh sedikit delay agar gambar selesai dirender oleh library
             setTimeout(() => {
-                const qrImage = qrContainer.querySelector('img');
-                if (qrImage) {
-                    btnDownloadQr.href = qrImage.src;
-                    btnDownloadQr.download = downloadFilename;
-                }
-            }, 100); // delay 100ms
+    const qrImage = qrContainer.querySelector('img');
+    if (qrImage) {
+        currentQrImageSrc = qrImage.src;
+        currentQrFilename = downloadFilename;
+    }
+}, 100); // delay 100ms
+        });
+
+        btnDownloadQr.addEventListener('click', function() {
+            if (!currentQrImageSrc) {
+                alert('QR Code belum siap, coba tunggu sebentar lalu klik lagi.');
+                return;
+            }
+            const tempLink = document.createElement('a');
+            tempLink.href = currentQrImageSrc;
+            tempLink.download = currentQrFilename;
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
         });
     }
 
@@ -483,4 +499,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 </script>
