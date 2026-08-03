@@ -1,0 +1,373 @@
+/* ==========================================================================
+   Presensi Digital — Dashboard Redesign
+   Tambahkan file ini SETELAH bootstrap.min.css dan SEBELUM style.css lama
+   <link rel="stylesheet" href="/presensi/assets/css/dashboard-redesign.css">
+   ========================================================================== */
+
+:root {
+  --teal: #0b5d51;
+  --teal-dark: #0a4d47;
+  --teal-hover: #0f6f61;
+  --teal-light-bg: #e7f5f2;
+  --text-dark: #1c2124;
+  --text-muted: #7a8286;
+  --card-radius: 20px;
+  --sidebar-width: 220px;
+}
+
+body {
+  background: linear-gradient(135deg, #cbe9e3 0%, #d3d4ef 100%);
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   LAYOUT — Sidebar + Main content
+   ========================================================================== */
+
+.app-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 48px);
+  position: sticky;
+  top: 24px;
+}
+
+.app-sidebar .sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.app-sidebar .sidebar-logo img {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link i {
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  background-color: var(--teal-light-bg);
+  color: var(--teal-dark);
+}
+
+.nav-link.active {
+  background-color: var(--teal);
+  color: #fff;
+}
+
+.nav-link.active:hover {
+  background-color: var(--teal-hover);
+  color: #fff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #ececec;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-bottom .nav-link.text-danger:hover {
+  background-color: #fdeceb;
+  color: #c0392b !important;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   TOP BAR
+   ========================================================================== */
+
+.app-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  padding: 12px 20px;
+}
+
+.app-topbar .welcome-text {
+  font-size: 0.8rem;
+  color: var(--teal);
+  font-weight: 500;
+  margin: 0;
+}
+
+.app-topbar .welcome-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.app-topbar .topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-topbar .icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--teal-light-bg);
+  color: var(--teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.app-topbar .icon-btn:hover {
+  background: var(--teal);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.app-topbar .user-chip img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   DASHBOARD TITLE
+   ========================================================================== */
+
+.dashboard-title h1 {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.dashboard-title p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   STAT CARDS
+   ========================================================================== */
+
+.stat-card {
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  padding: 22px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(11, 93, 81, 0.12);
+}
+
+.stat-card .stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+}
+
+.stat-card .stat-icon.bg-blue   { background: #375cdf; }
+.stat-card .stat-icon.bg-green  { background: #2bae73; }
+.stat-card .stat-icon.bg-yellow { background: #f2ad25; }
+
+.stat-card .stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-card .stat-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   CTA BANNER
+   ========================================================================== */
+
+.cta-banner {
+  background: var(--teal-dark);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-banner .cta-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #9fd9cc;
+  text-transform: uppercase;
+}
+
+.cta-banner h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 8px 0 16px;
+  max-width: 420px;
+  color: #fff !important;
+}
+
+.cta-banner .btn-cta {
+  background: #ffffff;
+  color: var(--teal-dark);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.cta-banner .btn-cta:hover {
+  background: var(--teal-light-bg);
+  transform: translateY(-2px);
+}
+
+.cta-banner .cta-deco {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE — Mobile / Tablet
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .app-shell {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  /* Sidebar becomes a horizontal top bar, collapsible via Bootstrap Offcanvas */
+  .app-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+  }
+
+  .app-sidebar .sidebar-nav,
+  .app-sidebar .sidebar-bottom {
+    display: none; /* moved into offcanvas menu on mobile — see header.php */
+  }
+
+  .app-sidebar .sidebar-logo {
+    margin-bottom: 0;
+  }
+
+  .cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-banner .cta-deco {
+    display: none;
+  }
+}
+
+.offcanvas-header {
+    padding: 20px;
+}
+
+.offcanvas-title {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.offcanvas-body {
+    padding: 0 20px 20px;
+}
+
+@media (max-width: 575.98px) {
+  .app-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stat-card .stat-value {
+    font-size: 1.6rem;
+  }
+}
