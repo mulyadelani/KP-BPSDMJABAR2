@@ -10,14 +10,9 @@ $search = $_GET['search'] ?? '';
 include 'header.php';
 ?>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <div>
-        <h1 class="h2 fw-bold">Kelola Presensi</h1>
-        <p class="text-muted">Pilih kategori untuk melihat atau menambah data presensi.</p>
-    </div>
-    <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
-        <ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.php">Dashboard</a></li><li class="breadcrumb-item active" aria-current="page">Kelola Presensi</li></ol>
-    </nav>
+<div class="mb-3">
+    <h1 class="h2 fw-bold">Kelola Presensi</h1>
+    <p class="text-muted mb-0">Pilih kategori untuk melihat atau menambah data presensi.</p>
 </div>
 
 <form class="d-flex mb-4" method="GET" action="kelola_presensi.php">

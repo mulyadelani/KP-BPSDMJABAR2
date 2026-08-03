@@ -121,19 +121,10 @@ if (isset($_SESSION['pesan_sukses'])) {
 include 'header.php';
 ?>
 
-<!-- Header Halaman dan Breadcrumb -->
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <div>
-        <h1 class="h2 fw-bold"><?php echo htmlspecialchars($nama_kategori); ?></h1>
-        <p class="text-muted">Kelola semua presensi yang ada di dalam kategori ini.</p>
-    </div>
-    <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="kelola_presensi.php">Kelola Presensi</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Daftar Presensi</li>
-        </ol>
-    </nav>
+<!-- Header Halaman -->
+<div class="mb-3">
+    <h1 class="h2 fw-bold"><?php echo htmlspecialchars($nama_kategori); ?></h1>
+    <p class="text-muted mb-0">Kelola semua presensi yang ada di dalam kategori ini.</p>
 </div>
 
 <?php echo $pesan; ?>
