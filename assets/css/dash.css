@@ -176,11 +176,47 @@ body {
   transform: translateY(-2px);
 }
 
-.app-topbar .user-chip img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
+.app-topbar .user-chip {
+  padding: 8px 12px 8px 8px;
+  border-radius: 999px;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.app-topbar .user-chip:hover {
+    background-color: var(--teal-light-bg);
+    border-color: var(--teal);
+}
+
+.app-topbar .user-chip .user-avatar-ikon {
+    widht: 32px;
+    height: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.app-topbar .iser-chip .user-avatar-ikon i{
+    line-height: 1;
+}
+
+.app-topbar .user-chip .user-chip-caret {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+}
+
+.app-topbar .user-chip[aria-expanded="true"] .user-chip-caret {
+    transform: rotate(180deg);
 }
 
 /* ==========================================================================

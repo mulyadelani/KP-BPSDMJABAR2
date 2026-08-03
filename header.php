@@ -69,15 +69,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </li>
             <?php endif; ?>
         </ul>
-
-        <div class="sidebar-bottom">
-            <a class="nav-link" href="/presensi/ganti_password.php">
-                <i class="bi bi-key-fill"></i> Ganti Password
-            </a>
-            <a class="nav-link text-danger" href="/presensi/logout.php">
-                <i class="bi bi-box-arrow-right"></i> Logout
-            </a>
-        </div>
     </aside>
 
     <!-- ===================== OFFCANVAS MENU (mobile) ===================== -->
@@ -95,10 +86,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <li><a class="nav-link <?php echo ($currentPage == 'kelola_user.php') ? 'active' : ''; ?>" href="/presensi/admin/kelola_user.php"><i class="bi bi-people-fill"></i> Kelola User</a></li>
                 <?php endif; ?>
             </ul>
-            <div class="sidebar-bottom">
-                <a class="nav-link" href="/presensi/ganti_password.php"><i class="bi bi-key-fill"></i> Ganti Password</a>
-                <a class="nav-link text-danger" href="/presensi/logout.php"><i class="bi bi-box-arrow-right"></i> Logout</a>
-            </div>
         </div>
     </div>
 
@@ -114,7 +101,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <div class="topbar-actions">
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center gap-2 text-decoration-none user-chip" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/presensi/assets/img/logo-presensi.png" alt="Avatar">
+                        <div class="user-avatar-ikon">
+                          <i class="bi bi-person-fill"></i>
+                </div>
                         <span class="fw-semibold text-dark d-none d-sm-inline"><?php echo htmlspecialchars($_SESSION['nama_lengkap'] ?? 'User'); ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
