@@ -18,30 +18,40 @@ Repositori ini berisi source code proyek Kerja Praktik (KP) terkait **redesain W
 Proyek ini merupakan bagian dari program magang/KP di Badan Pengembangan Sumber Daya Manusia (BPSDM) Provinsi Jawa Barat. Tim kami secara khusus bertanggung jawab pada bagian **Presensi Digital**, dengan fokus kontribusi pada pengembangan sisi desain UI/UX halaman tersebut.
 
 ## Struktur File
+
 | File / Folder | Keterangan |
 |----------------|------------|
-| `assets/` | Kumpulan aset pendukung (gambar, ikon, dll) — *akan ditambahkan* |
-| `index.php` / `landing.php` | Halaman utama/landing Presensi Digital (berisi Beranda, Tentang, Fitur & Manfaat, Kontak) — *akan ditambahkan* |
+| `assets/css/dashboard-redesign.css` | Stylesheet khusus untuk redesign UI (sidebar, kartu statistik, banner, responsive, hover effect) |
+| `header.php` | Layout utama (sidebar navigasi + top bar), digunakan di seluruh halaman internal |
+| `footer.php` | Penutup layout + pemanggilan Bootstrap JS bundle |
+| `index.php` | Halaman Dashboard — ringkasan statistik presensi (kartu Total Pelatihan, Total Peserta Hadir, Jumlah Pengguna) |
 | `login.php` | Halaman login panel Presensi Digital — *akan ditambahkan* |
-| *(file lain menyusul)* | Struktur halaman akan disusun seiring proses desain ulang |
+| *(file lain menyusul)* | Struktur halaman lain (Kelola Kategori, Kelola Presensi, Kelola User) akan disusun seiring proses desain ulang |
 
 ## Fitur yang Dikerjakan
-- Belum ada fitur yang dikerjakan — proyek baru dimulai
-- Rencana kerja tim pada bagian **Presensi Digital**:
-  - **Dashboard** — merancang tampilan dashboard untuk ringkasan data presensi
+
+- **Dashboard** ✅ *(selesai — branch `redesain-ui`)*
+  - Redesign layout dari navbar atas menjadi sidebar navigasi
+  - Kartu statistik dinamis: Total Pelatihan, Total Peserta Hadir, Jumlah Pengguna (khusus role admin)
+  - Banner ajakan aksi menuju halaman Kelola Presensi
+  - Sidebar & menu responsive (collapse menjadi offcanvas di layar mobile)
+  - Hover effect pada menu navigasi (desktop & mobile) dan kartu statistik
+- **Download Barcode** ✅ *(selesai)*
+  - Fitur unduh barcode presensi
+- Rencana kerja tim selanjutnya pada bagian **Presensi Digital**:
   - **Presensi Semua Kegiatan** — menampilkan dan mengelola data presensi dari seluruh kegiatan
   - **Kelola Kategori & Kelola Presensi** — menggabungkan halaman kelola kategori dengan halaman kelola presensi menjadi satu halaman agar lebih efisien
-  - **Download Barcode** — Memperbaiki fitur unduh QR Barcode yang bug tombol qr nya tidak berfungsi dan tidak bisa download gambar QR nya
 - Daftar fitur akan diperbarui seiring progres pengecekan dan pengerjaan pada website
 
 ## Cara Menjalankan
-1. Clone repositori ini ke lokal:
-   ```
-   git clone https://github.com/mulyadelani/KP-BPSDMJABAR2.git
-   ```
-2. Buka file halaman utama langsung di browser, atau jalankan menggunakan Live Server (ekstensi VS Code) untuk hasil yang lebih optimal.
+
+1. Clone repositori ini ke lokal: 
+git clone https://github.com/mulyadelani/KP-BPSDMJABAR2.git
+2. Untuk melihat tampilan hasil redesign terbaru, pindah ke branch `redesain-ui`:
+3. Jalankan menggunakan XAMPP (Apache + MySQL aktif), lalu buka `http://localhost/presensi/index.php` di browser.
 
 ## Tim Pengembang
+
 1. Mulya Delani (123140019)
 2. Eka Putri Azhari Ritonga (123140028)
 3. Atalie Salsabila (123140027)
