@@ -15,12 +15,13 @@ include 'header.php';
     <p class="text-muted mb-0">Pilih kategori untuk melihat atau menambah data presensi.</p>
 </div>
 
-<form class="d-flex mb-4" method="GET" action="kelola_presensi.php">
+<form class="d-flex mb-4 position-relative" method="GET" action="kelola_presensi.php" id="searchForm">
     <div class="input-group">
         <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
-        <input class="form-control border-start-0" type="search" name="search" placeholder="Cari nama kategori..." value="<?php echo htmlspecialchars($search); ?>">
+        <input class="form-control border-start-0" type="search" id="searchInput" name="search" placeholder="Cari kategori..." value="<?php echo htmlspecialchars ($search); ?>" autocomplete="off">
         <button class="btn btn-primary" type="submit">Cari</button>
-    </div>
+</div>
+<div id="searchSuggestions" class="list-group position-absolute w-100" style="top: 100%; z-index: 1000; display: none;"></div>
 </form>
 
 <h3 class="h4 mb-3">Kategori Presensi</h3>
@@ -66,5 +67,51 @@ include 'header.php';
     $stmt->close();
     ?>
 </div>
+
+<script>
+const searchInput = document.getElementById ('searchInput');
+const suggestionsBox = document.getElementById('searchSuggestions');
+let debounceTimer;
+
+searchInput.addEventListener ('input', function () {
+    clearTimeout(debounceTimer);
+    const keyword = this.value.trim();
+    
+    if (keyword.length === 0) {
+        suggestionsBox.style.display = 'none';
+        suggestionsBox.innerHTML = '';
+        return;
+    }
+
+    debounceTimer = setTimeout(() => {
+        fetch('search_kategori.php?search=' + encodeURIComponent(keyword))
+        .then(response => response.json())
+        .then(data => {
+            suggestionsBox.innerHTML = '';
+            if (data.length === 0) {
+                suggestionsBox.style.display = 'none';
+                return;
+            }
+            data.forEach(item => {
+                const link = document.createElement('a');
+                link.href = 'daftar_presensi.php?kategori_id=' + item.id;
+                link.className = 'list-group-item list-group-item-action';
+
+            // Highlight kata kunci
+                const regex = new RegExp('(' + keyword + ')', 'gi');
+                link.innerHTML = item.nama_kategori.replace(regex, '<mark>$1</mark>');
+                suggestionsBox.appendChild(link);
+            });
+            suggestionsBox.style.display = 'block';
+        })
+        .catch (err => console.error('Search error:', err));
+    }, 300);
+});
+document.addEventListener('click', function (e) {
+    if (!searchInput.contains (e.target) && !suggestionsBox.contains (e.target)) {
+        suggestionsBox.style.display = 'none';
+    }
+});
+</script>
 
 <?php include 'footer.php'; ?>
